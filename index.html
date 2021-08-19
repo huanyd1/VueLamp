@@ -29,13 +29,16 @@
                 <p>
                     this is the first lamp our company. we're making a huge collection of modern Lamps in all categories from home use of office use
                 </p>
-                <a href="fb.com/dohuanyd1">Check all Collections</a>
+                <a src="fb.com/dohuanyd1">Check all Collections</a>
                 <div class="control">
-                    <p>04</p>
-                    <div class="line">
-                        <span></span>
+                    <p class="control-p">Click Here To Listen</p>
+                    <div class="audio">
+                        <img src="images/play-button.png" class='btn-play' id="icon-play"></img>
+
+                        <audio id="mySong">
+                            <source src="audio/LateNight.mp3">
+                        </audio>    
                     </div>
-                    <p>05</p>
                 </div>
             </div>
         </div>
@@ -47,6 +50,21 @@
             function toggleBtn(){
                 btn.classList.toggle("active");
                 light.classList.toggle("on");
+            }
+
+
+            var mySong = document.getElementById("mySong");
+            var icon = document.getElementById("icon-play");
+
+            icon.onclick = function(){
+                if(mySong.paused){
+                    mySong.play();
+                    icon.src = "images/pause-button.png";
+                }
+                else{
+                    mySong.pause();
+                    icon.src = "images/play-button.png";
+                }
             }
         </script>
     </body>
